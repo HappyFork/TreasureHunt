@@ -1,8 +1,217 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu1rp6o5rnmcr"]
+[gd_scene load_steps=22 format=3 uid="uid://cu1rp6o5rnmcr"]
 
+[ext_resource type="Texture2D" uid="uid://cov88h7tyi3j2" path="res://assets/world.png" id="1_0t70i"]
 [ext_resource type="PackedScene" uid="uid://mc7bn0kq6qf" path="res://nodes/boat.tscn" id="1_n7a3k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pkas"]
+radius = 22.6646
+height = 66.0919
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5e80"]
+radius = 21.7229
+height = 70.673
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdqec"]
+radius = 21.5023
+height = 76.3234
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnm0d"]
+radius = 15.0
+height = 44.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_go2u6"]
+radius = 34.0147
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wc4b3"]
+radius = 30.0666
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8aex"]
+radius = 33.0
+height = 176.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mulc7"]
+radius = 16.9706
+height = 53.7402
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_236nx"]
+radius = 38.0788
+height = 107.942
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ob0x2"]
+radius = 23.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28opw"]
+radius = 18.5948
+height = 46.3433
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tjul"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h81hr"]
+radius = 15.0333
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3q2l"]
+radius = 26.0
+height = 370.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ld1b"]
+radius = 11.8785
+height = 53.5692
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53p5o"]
+radius = 23.4094
+height = 64.4172
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twdq1"]
+radius = 49.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atmjq"]
+radius = 16.4515
+height = 52.5991
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3hxp"]
+radius = 7.1676
+height = 23.0344
 
 [node name="Ocean" type="Node2D"]
 
+[node name="World" type="Sprite2D" parent="."]
+texture = ExtResource("1_0t70i")
+
 [node name="Boat" parent="." instance=ExtResource("1_n7a3k")]
-position = Vector2(596, 315)
+
+[node name="Camera2D" type="Camera2D" parent="Boat"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="Islands" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Islands"]
+position = Vector2(94, 63)
+rotation = 0.872665
+shape = SubResource("CapsuleShape2D_5pkas")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(323, -31, 315, 3, 330, 35, 377, 63, 453, 59, 493, 29, 511, -10, 492, -27, 440, 4, 387, 15, 364, 8, 341, -36)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Islands"]
+position = Vector2(296, -131)
+rotation = 1.39626
+shape = SubResource("CapsuleShape2D_b5e80")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Islands"]
+position = Vector2(510, -125)
+rotation = 0.698132
+shape = SubResource("CapsuleShape2D_kdqec")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Islands"]
+position = Vector2(-268, 108)
+shape = SubResource("CapsuleShape2D_cnm0d")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Islands"]
+position = Vector2(-400, -126)
+shape = SubResource("CircleShape2D_go2u6")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-837, -284, -775, -236, -687, -118, -500, 153, -276, 388, -77, 511, -119, 537, -199, 517, -343, 413, -609, 104, -672, 32, -760, -125, -823, -194)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-714, -467, -658, -492, -469, -350, -435, -347, -409, -461, -427, -569, -487, -588, -544, -574, -634, -587, -711, -560)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Islands"]
+position = Vector2(-824, -709)
+shape = SubResource("CircleShape2D_wc4b3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Islands"]
+position = Vector2(-811, -904)
+shape = SubResource("CapsuleShape2D_b8aex")
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-526, -944, -456, -966, -334, -966, -244, -950, -243, -920, -271, -842, -315, -768, -335, -746, -364, -739, -400, -755, -465, -833)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-81, -849, 6, -817, 25, -859, 28, -910, -47, -944, -81, -879)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(42, -697, 53, -678, 53, -631, 69, -569, 98, -516, 137, -488, 175, -472, 219, -479, 289, -520, 318, -580, 312, -658, 281, -701, 245, -721, 189, -724, 148, -704, 124, -669, 120, -636, 139, -588, 130, -572, 107, -584, 94, -643, 111, -707, 177, -747, 257, -745, 315, -715, 348, -629, 348, -566, 339, -535, 278, -470, 216, -448, 153, -450, 103, -467, 53, -523, 27, -605, 23, -676)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Islands"]
+position = Vector2(443, -927)
+rotation = 0.872665
+shape = SubResource("CapsuleShape2D_mulc7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Islands"]
+position = Vector2(732, -954)
+rotation = 1.0472
+shape = SubResource("CapsuleShape2D_236nx")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Islands"]
+position = Vector2(837, -918)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ob0x2")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Islands"]
+position = Vector2(899, -860)
+rotation = 1.39626
+shape = SubResource("CapsuleShape2D_28opw")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Islands"]
+position = Vector2(935, -780)
+shape = SubResource("CircleShape2D_2tjul")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Islands"]
+position = Vector2(953, -705)
+shape = SubResource("CircleShape2D_h81hr")
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(444, -416, 479, -409, 521, -375, 509, -359, 464, -330, 437, -326, 427, -380)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Islands"]
+position = Vector2(819, -318)
+shape = SubResource("CapsuleShape2D_y3q2l")
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(847, -296, 884, -131, 929, -50, 950, 32, 946, 110, 886, 155, 755, 128, 730, 29, 788, -194)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(327, 292, 369, 275, 421, 282, 441, 310, 441, 349, 404, 359, 393, 387, 405, 407, 369, 408, 319, 389, 297, 349)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Islands"]
+position = Vector2(465, 402)
+rotation = 0.610865
+shape = SubResource("CapsuleShape2D_4ld1b")
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(704, 332, 731, 344, 770, 348, 784, 359, 776, 369, 750, 373, 705, 365, 693, 337)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Islands"]
+position = Vector2(911, 375)
+rotation = 0.436332
+shape = SubResource("CapsuleShape2D_53p5o")
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(746, 479, 787, 431, 825, 427, 871, 451, 892, 481, 883, 489, 869, 487, 841, 467, 802, 470, 767, 491)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-687, 435, -657, 441, -636, 488, -632, 526, -647, 608, -681, 667, -744, 713, -800, 733, -849, 736, -912, 704, -959, 641, -965, 568, -938, 486, -882, 437, -817, 419, -746, 437, -712, 477, -702, 535, -731, 542, -730, 504, -758, 471, -811, 456, -861, 462, -903, 496, -927, 560, -916, 649, -870, 688, -822, 699, -766, 694, -714, 661, -680, 615, -666, 571, -666, 509)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(-345, 682, -321, 690, -267, 794, -208, 874, -249, 887, -385, 905, -425, 895, -435, 863)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Islands"]
+polygon = PackedVector2Array(124, 896, 154, 877, 177, 845, 199, 839, 216, 844, 255, 888, 292, 880, 317, 783, 316, 715, 283, 671, 209, 627, 159, 624, 153, 636, 117, 659, 74, 721, 61, 765, 67, 840, 92, 889)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Islands"]
+position = Vector2(885, 898)
+shape = SubResource("CircleShape2D_twdq1")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Islands"]
+position = Vector2(840, 801)
+rotation = 1.39626
+shape = SubResource("CapsuleShape2D_atmjq")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Islands"]
+position = Vector2(793, 736)
+rotation = 0.698132
+shape = SubResource("CapsuleShape2D_y3hxp")

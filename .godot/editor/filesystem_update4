@@ -1,3 +1,2 @@
-res://nodes/boat.tscn
-res://nodes/boat.gd
 res://scenes/ocean.tscn
+res://nodes/boat.tscn
