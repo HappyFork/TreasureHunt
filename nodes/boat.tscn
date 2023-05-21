@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mc7bn0kq6qf"]
+[gd_scene load_steps=4 format=3 uid="uid://mc7bn0kq6qf"]
 
 [ext_resource type="Script" path="res://nodes/boat.gd" id="1_erbhi"]
+[ext_resource type="Texture2D" uid="uid://ijrdcg73kba6" path="res://assets/boat.png" id="2_l84qg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3klv4"]
 size = Vector2(20, 10)
@@ -16,3 +17,8 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3klv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_l84qg")
